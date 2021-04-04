@@ -60,5 +60,9 @@ def join_data(data_list):
 
 
 result = join_data(list_converter(contacts_list))
-for line in result:
-    print(line)
+# for line in result:
+#     print(line)
+
+with open("phonebook.csv", "w") as file:
+    datawriter = csv.writer(file, delimiter=',')
+    datawriter.writerows(result)
